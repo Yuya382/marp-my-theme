@@ -1,0 +1,84 @@
+/* @theme my */
+
+@import 'default';
+
+:root {
+    font-size: 14px;
+    background: #F7FBFF;
+    font-family: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP";
+    /* font-family:"https://fonts.googleapis.com/css2?family=Cherry+Bomb+One"; */
+}
+
+header {
+    color: red;
+}
+
+
+section.title {
+    background-image: url('https://www.benesse.co.jp/brand/assets/images/philosophy/img_logo.png');
+}
+
+
+section.normal {}
+
+section.appendix {}
+
+
+section.EoF {}
+
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+header,
+footer {
+    color: #005AB2;
+}
+
+h1 {
+    font-size: 48px;
+    counter-reset: chapter;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    counter-reset: sub-chapter;
+    text-decoration: underline;
+}
+
+h3 {
+    font-size: 32px;
+    counter-reset: section;
+    text-decoration: underline;
+}
+
+h4 {
+    font-size: 24px;
+    text-decoration: underline dotted;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+
+h2::before {
+    counter-increment: chapter;
+    content: counter(chapter) ". ";
+}
+
+h3::before {
+    counter-increment: sub-chapter;
+    content: counter(chapter) "." counter(sub-chapter)". ";
+}
+
+h4::before {
+    counter-increment: section;
+    content: counter(chapter) "." counter(sub-chapter)"." counter(section)" ";
+}
